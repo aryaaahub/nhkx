@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsip Rahasia XB</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1a1a1a;
+            color: #f4d03f;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #2e2e2e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #f4d03f;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Arsip Rahasia XB</h1>
+        <img src="maskot_brawijaya.png" alt="Maskot" width="100%">
+        <img src="projek_logo_2.png" alt="Logo" width="100%">
+        <p>Masukkan nama Anda:</p>
+        <input type="text" id="nama" placeholder="Nama Anda">
+        <input type="password" id="password" placeholder="Password" style="display:none;">
+        <button onclick="cekNama()">Masuk</button>
+    </div>
+    <script>
+        function cekNama() {
+            var nama = document.getElementById("nama").value;
+            var passwordInput = document.getElementById("password");
+            var button = document.querySelector("button");
+            
+            if (nama.toLowerCase() === "bayu") {
+                window.location.href = "halaman2.html";
+            } else {
+                passwordInput.style.display = "block";
+                button.onclick = function() {
+                    if (passwordInput.value === "brawijaya keren") {
+                        window.location.href = "halaman2.html";
+                    } else {
+                        alert("Password salah!");
+                    }
+                };
+            }
+        }
+    </script>
+</body>
+</html>
